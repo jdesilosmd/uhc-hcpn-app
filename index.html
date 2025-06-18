@@ -43,7 +43,7 @@
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
+            margin-top: 1.5rem; /* Increased margin for better separation */
             @apply shadow-md rounded-lg overflow-hidden;
         }
         .comparison-table th, .comparison-table td {
@@ -81,7 +81,7 @@
                 A Key to Universal Health Care in the Philippines
             </h2>
             <p class="text-center text-gray-600 mt-4">
-                Click on the different parts of the network or the conceptual sections to learn about their roles in delivering health services.
+                Click on the different parts of the network to learn about their roles in delivering health services.
             </p>
         </header>
 
@@ -151,12 +151,69 @@
                     </div>
                 </div>
 
-                <!-- New section for Individual vs. Population-Based Services -->
-                <div class="w-full mt-6 p-4 bg-blue-100 border border-blue-200 rounded-xl shadow-md text-center">
-                    <button id="show-comparison-btn" class="hcpn-node bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-200 text-lg" data-section="individual-vs-population">
-                        Individual vs. Population-Based Services <br class="md:hidden"> (Click to Compare)
-                    </button>
+                <!-- Individual vs. Population-Based Services Table (Directly in main area) -->
+                <div class="w-full mt-6 p-4 bg-blue-50 border border-blue-200 rounded-xl shadow-md text-center">
+                    <h4 class="text-xl font-bold text-blue-700 mb-4">Individual vs. Population-Based Services</h4>
+                    <p class="mb-4 text-gray-700">The UHC Law clearly distinguishes between two broad categories of health services based on their target recipients and funding mechanisms. Here's a comparison:</p>
+
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Individual-Based Health Services (IBHS)</th>
+                                <th>Population-Based Health Services (PBHS)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Recipient</strong></td>
+                                <td>One specific person/patient.</td>
+                                <td>Groups of people, communities, or the entire population.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Primary Effect</strong></td>
+                                <td>On the individual recipient's health. Limited direct impact on broader population health.</td>
+                                <td>Widespread effect on public health, contributing to overall community well-being.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Examples</strong></td>
+                                <td>
+                                    <ul>
+                                        <li>Doctor's consultations</li>
+                                        <li>Surgeries</li>
+                                        <li>Prescribed medications</li>
+                                        <li>Diagnostic tests (X-rays, blood tests)</li>
+                                        <li>Hospitalizations</li>
+                                        <li>Dental procedures</li>
+                                        <li>Physical therapy</li>
+                                    </ul>
+                                </td>
+                                <td>
+                                    <ul>
+                                        <li>Mass vaccination campaigns</li>
+                                        <li>Health education programs (e.g., hygiene, nutrition)</li>
+                                        <li>Disease surveillance and outbreak response</li>
+                                        <li>Vector control (e.g., anti-dengue initiatives)</li>
+                                        <li>Water sanitation programs</li>
+                                        <li>Food safety regulations</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Funding</strong></td>
+                                <td>Primarily covered by the National Health Insurance Program (NHIP) through PhilHealth benefits. May involve co-payments.</td>
+                                <td>Financed by the National Government through the DOH. Provided free of charge at the point of service for all Filipinos.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Goal</strong></td>
+                                <td>Diagnose, treat, rehabilitate, or palliate an individual's specific health condition.</td>
+                                <td>Promote health, prevent diseases, and control health risks at a community or population level.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="mt-4 font-semibold italic text-blue-600">Understanding this distinction is crucial for appreciating how UHC ensures comprehensive care from personal health needs to community-wide well-being.</p>
                 </div>
+
 
                  <!-- Footer for Source and Logo -->
                 <div class="w-full text-center mt-8 text-gray-500 text-sm">
@@ -171,7 +228,7 @@
                 <div id="detail-content" class="text-gray-700 leading-relaxed text-base">
                     <p class="mb-4">The Universal Health Care (UHC) Law in the Philippines aims to provide equitable access to quality and affordable health care for all Filipinos. A key strategy for achieving this is the establishment of <strong>Health Care Provider Networks (HCPNs)</strong>.</p>
                     <p class="mb-4">An HCPN is an integrated and coordinated group of health care providers, from primary care to tertiary hospitals, working together to deliver a comprehensive range of health services within a defined geographical area (province or city-wide health system).</p>
-                    <p class="mb-4">Click on any of the boxes on the left to learn more about the different components of an HCPN and their specific roles in the service delivery system. Also, explore the comparison between individual and population-based services by clicking the button below the network diagram.</p>
+                    <p class="mb-4">Click on any of the boxes on the left to learn more about the different components of an HCPN and their specific roles in the service delivery system. The comparison between individual and population-based services is now directly visible below the network diagram.</p>
                 </div>
             </div>
         </main>
@@ -251,76 +308,13 @@
                     </ul>
                     <p class="font-semibold italic text-blue-600">These facilities provide critical diagnostic and supportive services for the entire network.</p>
                 `
-            },
-            "individual-vs-population": {
-                title: "Individual vs. Population-Based Services",
-                content: `
-                    <p class="mb-4">The UHC Law clearly distinguishes between two broad categories of health services based on their target recipients and funding mechanisms. Here's a comparison:</p>
-
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>Feature</th>
-                                <th>Individual-Based Health Services (IBHS)</th>
-                                <th>Population-Based Health Services (PBHS)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Recipient</strong></td>
-                                <td>One specific person/patient.</td>
-                                <td>Groups of people, communities, or the entire population.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Primary Effect</strong></td>
-                                <td>On the individual recipient's health. Limited direct impact on broader population health.</td>
-                                <td>Widespread effect on public health, contributing to overall community well-being.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Examples</strong></td>
-                                <td>
-                                    <ul>
-                                        <li>Doctor's consultations</li>
-                                        <li>Surgeries</li>
-                                        <li>Prescribed medications</li>
-                                        <li>Diagnostic tests (X-rays, blood tests)</li>
-                                        <li>Hospitalizations</li>
-                                        <li>Dental procedures</li>
-                                        <li>Physical therapy</li>
-                                    </ul>
-                                </td>
-                                <td>
-                                    <ul>
-                                        <li>Mass vaccination campaigns</li>
-                                        <li>Health education programs (e.g., hygiene, nutrition)</li>
-                                        <li>Disease surveillance and outbreak response</li>
-                                        <li>Vector control (e.g., anti-dengue initiatives)</li>
-                                        <li>Water sanitation programs</li>
-                                        <li>Food safety regulations</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Funding</strong></td>
-                                <td>Primarily covered by the National Health Insurance Program (NHIP) through PhilHealth benefits. May involve co-payments.</td>
-                                <td>Financed by the National Government through the DOH. Provided free of charge at the point of service for all Filipinos.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Goal</strong></td>
-                                <td>Diagnose, treat, rehabilitate, or palliate an individual's specific health condition.</td>
-                                <td>Promote health, prevent diseases, and control health risks at a community or population level.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="mt-4 font-semibold italic text-blue-600">Understanding this distinction is crucial for appreciating how UHC ensures comprehensive care from personal health needs to community-wide well-being.</p>
-                `
             }
+            // Removed "individual-vs-population" from hcpnDetails as it's now a static part of the HTML
         };
 
         const hcpnNodes = document.querySelectorAll('.hcpn-node');
         const detailTitle = document.getElementById('detail-title');
         const detailContent = document.getElementById('detail-content');
-        const showComparisonBtn = document.getElementById('show-comparison-btn'); // Get the new button
 
         // Function to load content based on section ID
         function loadHCPNDetail(sectionId) {
@@ -334,32 +328,16 @@
             }
         }
 
-        // Add event listeners to HCPN diagram nodes (excluding the new button for now, handled separately if needed)
+        // Add event listeners to HCPN diagram nodes
         hcpnNodes.forEach(node => {
-            // Ensure the comparison button doesn't get activated with general hcpn-node clicks initially
-            if (node.id !== 'show-comparison-btn') {
-                node.addEventListener('click', (event) => {
-                    // Remove active state from all hcpn-nodes and the comparison button
-                    hcpnNodes.forEach(n => n.classList.remove('active'));
-                    showComparisonBtn.classList.remove('active'); // Remove active from the comparison button
-                    // Add active state to the clicked node
-                    node.classList.add('active');
-                    loadHCPNDetail(node.dataset.section);
-                });
-            }
-        });
-
-        // Add specific event listener for the new comparison button
-        if (showComparisonBtn) {
-            showComparisonBtn.addEventListener('click', (event) => {
-                // Remove active state from all hcpn-nodes and other buttons
+            node.addEventListener('click', (event) => {
+                // Remove active state from all hcpn-nodes
                 hcpnNodes.forEach(n => n.classList.remove('active'));
-                // Add active state to the clicked comparison button
-                showComparisonBtn.classList.add('active');
-                loadHCPNDetail(showComparisonBtn.dataset.section);
+                // Add active state to the clicked node
+                node.classList.add('active');
+                loadHCPNDetail(node.dataset.section);
             });
-        }
-
+        });
 
         // Initialize with the introduction text when the page loads
         document.addEventListener('DOMContentLoaded', () => {
@@ -368,7 +346,7 @@
             detailContent.innerHTML = `
                 <p class="mb-4">The Universal Health Care (UHC) Law in the Philippines aims to provide equitable access to quality and affordable health care for all Filipinos. A key strategy for achieving this is the establishment of <strong>Health Care Provider Networks (HCPNs)</strong>.</p>
                 <p class="mb-4">An HCPN is an integrated and coordinated group of health care providers, from primary care to tertiary hospitals, working together to deliver a comprehensive range of health services within a defined geographical area (province or city-wide health system).</p>
-                <p class="mb-4">Click on any of the boxes on the left to learn more about the different components of an HCPN and their specific roles in the service delivery system. Also, explore the comparison between individual and population-based services by clicking the button below the network diagram.</p>
+                <p class="mb-4">Click on any of the boxes on the left to learn more about the different components of an HCPN and their specific roles in the service delivery system. The comparison between individual and population-based services is now directly visible below the network diagram.</p>
             `;
             // No node will be active initially
         });
