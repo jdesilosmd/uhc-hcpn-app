@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UHC Law: HCPN Teaching App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+        }
+        /* Custom scrollbar for content area */
+        .scrollable-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scrollable-content::-webkit-scrollbar-track {
+            background: #e2e8f0; /* Light gray track */
+            border-radius: 10px;
+        }
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background: #94a3b8; /* Gray thumb */
+            border-radius: 10px;
+        }
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+            background: #64748b; /* Darker gray on hover */
+        }
+        /* Style for the interactive elements */
+        .hcpn-node {
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            @apply rounded-lg shadow-md hover:shadow-lg hover:scale-105;
+        }
+        .hcpn-node.active {
+            @apply ring-4 ring-blue-400 ring-offset-2;
+        }
+        .hcpn-level-box {
+            @apply p-4 rounded-xl shadow-inner;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="min-h-screen flex flex-col items-center p-4">
+        <!-- Header Section -->
+        <header class="w-full max-w-5xl bg-white rounded-lg shadow-md p-6 mb-8 mt-4 md:mt-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-blue-700 text-center mb-2">
+                Understanding Health Care Provider Networks (HCPNs)
+            </h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-gray-700 text-center">
+                A Key to Universal Health Care in the Philippines
+            </h2>
+            <p class="text-center text-gray-600 mt-4">
+                Click on the different parts of the network to learn about their roles in delivering health services.
+            </p>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="w-full max-w-5xl flex flex-col lg:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Interactive Diagram Section -->
+            <div class="w-full lg:w-2/3 p-6 md:p-8 bg-gray-50 flex flex-col items-center justify-start relative">
+                <h3 class="text-2xl font-bold text-blue-700 mb-6">Health Care Provider Network Structure</h3>
+
+                <!-- Overall HCPN container (mimicking the image layout) -->
+                <div class="w-full bg-yellow-100 border border-yellow-200 rounded-md p-4 mb-4 text-center font-bold text-lg text-yellow-800">
+                    Health Care Provider Network (HCPN)
+                </div>
+
+                <!-- Levels of Care (Rows) -->
+                <div class="w-full flex flex-col space-y-6">
+
+                    <!-- PRIMARY CARE LEVEL -->
+                    <div class="hcpn-level-box bg-green-100 border border-green-200">
+                        <p class="text-center font-semibold text-green-700 mb-4">PRIMARY CARE</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div id="brgy-pcf" class="hcpn-node bg-white p-3 text-center text-sm md:text-base flex-1 min-w-[120px] max-w-[calc(50%-1rem)] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]" data-section="primary-care-facilities">
+                                <img src="https://placehold.co/60x60/a7f3d0/065f46?text=PC" alt="Primary Care Facility Icon" class="mx-auto mb-2">
+                                <p class="font-bold">Barangay / Municipality PCFs</p>
+                                <p class="text-xs text-gray-600">(Licensed RHUs & BHSs within 30 mins)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INTERMEDIATE CARE LEVEL -->
+                    <div class="hcpn-level-box bg-purple-100 border border-purple-200">
+                        <p class="text-center font-semibold text-purple-700 mb-4">INTERMEDIATE CARE</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div id="level1-hosp" class="hcpn-node bg-white p-3 text-center text-sm md:text-base flex-1 min-w-[120px] max-w-[calc(50%-1rem)] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]" data-section="level1-hospitals">
+                                <img src="https://placehold.co/60x60/d8b4fe/581c87?text=H1" alt="Level 1 Hospital Icon" class="mx-auto mb-2">
+                                <p class="font-bold">Level 1 Hospitals</p>
+                                <p class="text-xs text-gray-600">(25, 50, 35, and 75 Beds)</p>
+                            </div>
+                            <div id="level2-hosp" class="hcpn-node bg-white p-3 text-center text-sm md:text-base flex-1 min-w-[120px] max-w-[calc(50%-1rem)] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]" data-section="level2-hospitals">
+                                <img src="https://placehold.co/60x60/d8b4fe/581c87?text=H2" alt="Level 2 Hospital Icon" class="mx-auto mb-2">
+                                <p class="font-bold">Level 2 Hospitals</p>
+                                <p class="text-xs text-gray-600">(100, 150, 200 Beds)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SPECIALTY CARE LEVEL -->
+                    <div class="hcpn-level-box bg-red-100 border border-red-200">
+                        <p class="text-center font-semibold text-red-700 mb-4">SPECIALTY CARE</p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div id="apex-hosp" class="hcpn-node bg-white p-3 text-center text-sm md:text-base flex-1 min-w-[120px] max-w-[calc(50%-1rem)] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]" data-section="apex-hospitals">
+                                <img src="https://placehold.co/60x60/fecaca/991b1b?text=AH" alt="Apex Hospital Icon" class="mx-auto mb-2">
+                                <p class="font-bold">Apex Hospitals</p>
+                                <p class="text-xs text-gray-600">(DOH Hospitals)</p>
+                            </div>
+                            <div id="specialty-centers" class="hcpn-node bg-white p-3 text-center text-sm md:text-base flex-1 min-w-[120px] max-w-[calc(50%-1rem)] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]" data-section="specialty-facilities">
+                                <img src="https://placehold.co/60x60/fecaca/991b1b?text=SC" alt="Specialty Center Icon" class="mx-auto mb-2">
+                                <p class="font-bold">Specialty Centers</p>
+                                <p class="text-xs text-gray-600">(Heart, Lung, Kidney, Neonatal, etc.)</p>
+                            </div>
+                            <div id="special-facilities" class="hcpn-node bg-white p-3 text-center text-sm md:text-base flex-1 min-w-[120px] max-w-[calc(50%-1rem)] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[200px]" data-section="special-facilities">
+                                <img src="https://placehold.co/60x60/fecaca/991b1b?text=SF" alt="Special Facilities Icon" class="mx-auto mb-2">
+                                <p class="font-bold">Special Facilities</p>
+                                <p class="text-xs text-gray-600">(Public Health Labs, Blood Facilities)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Footer for Source and Logo -->
+                <div class="w-full text-center mt-8 text-gray-500 text-sm">
+                    <p class="mb-2">Source: HFDB, Department of Health, Philippines</p>
+                    <img src="https://placehold.co/50x50/e0f2fe/3b82f6?text=DOH" alt="DOH Logo Placeholder" class="mx-auto opacity-75">
+                </div>
+            </div>
+
+            <!-- Detail Information Section -->
+            <div class="w-full lg:w-1/3 p-6 md:p-8 bg-white overflow-y-auto scrollable-content max-h-[85vh] rounded-b-lg lg:rounded-r-lg lg:rounded-bl-none">
+                <h3 class="text-2xl font-bold text-blue-700 mb-4" id="detail-title">Introduction to HCPNs</h3>
+                <div id="detail-content" class="text-gray-700 leading-relaxed text-base">
+                    <p class="mb-4">The Universal Health Care (UHC) Law in the Philippines aims to provide equitable access to quality and affordable health care for all Filipinos. A key strategy for achieving this is the establishment of <strong>Health Care Provider Networks (HCPNs)</strong>.</p>
+                    <p class="mb-4">An HCPN is an integrated and coordinated group of health care providers, from primary care to tertiary hospitals, working together to deliver a comprehensive range of health services within a defined geographical area (province or city-wide health system).</p>
+                    <p class="mb-4">Click on any of the boxes on the left to learn more about the different components of an HCPN and their specific roles in the service delivery system.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Data for each interactive element in the HCPN diagram
+        const hcpnDetails = {
+            "primary-care-facilities": {
+                title: "Primary Care Facilities (PCFs)",
+                content: `
+                    <p class="mb-4">Primary Care Facilities are the <strong>initial point of contact</strong> for patients in the healthcare system.</p>
+                    <ul class="list-disc list-inside ml-4 mb-4 space-y-2">
+                        <li><strong>Includes:</strong> Licensed Rural Health Units (RHUs) and their Barangay Health Stations (BHSs).</li>
+                        <li><strong>Accessibility:</strong> Designed to be accessible to communities, ideally within 30 minutes.</li>
+                        <li><strong>Services:</strong> Provide a comprehensive range of services for all presenting conditions, including health promotion, disease prevention, basic diagnosis, treatment, and coordination of referrals to higher levels of care. They act as the patient's navigator and coordinator.</li>
+                    </ul>
+                    <p class="font-semibold italic text-blue-600">They are crucial for early intervention and continuous patient care.</p>
+                `
+            },
+            "level1-hospitals": {
+                title: "Level 1 Hospitals",
+                content: `
+                    <p class="mb-4">Level 1 Hospitals are general hospitals offering basic inpatient and outpatient services.</p>
+                    <ul class="list-disc list-inside ml-4 mb-4 space-y-2">
+                        <li><strong>Bed Capacity:</strong> Typically have 25, 50, 35, or 75 beds.</li>
+                        <li><strong>Services:</strong> Provide basic medical, surgical, pediatric, and obstetrical services. They serve as a step-up from primary care when more advanced diagnostic or treatment capabilities are needed, but do not yet require highly specialized interventions.</li>
+                        <li><strong>Role in HCPN:</strong> Part of the Intermediate Care level, they work closely with PCFs for referrals and patient management.</li>
+                    </ul>
+                    <p class="font-semibold italic text-blue-600">These hospitals handle common medical conditions requiring hospitalization or minor surgical procedures.</p>
+                `
+            },
+            "level2-hospitals": {
+                title: "Level 2 Hospitals",
+                content: `
+                    <p class="mb-4">Level 2 Hospitals offer a wider range of services compared to Level 1, including more specialized medical and surgical capabilities.</p>
+                    <ul class="list-disc list-inside ml-4 mb-4 space-y-2">
+                        <li><strong>Bed Capacity:</strong> Generally have 100, 150, or 200 beds.</li>
+                        <li><strong>Services:</strong> Provide general medical, surgical, pediatric, obstetrical, and some specialized services (e.g., intensive care unit, specialized laboratory services, limited subspecialties).</li>
+                        <li><strong>Role in HCPN:</strong> Also part of the Intermediate Care level, they receive referrals from PCFs and Level 1 hospitals, and may refer complex cases to specialty care.</li>
+                    </ul>
+                    <p class="font-semibold italic text-blue-600">They serve as a bridge between basic primary care and highly specialized tertiary care.</p>
+                `
+            },
+            "apex-hospitals": {
+                title: "Apex Hospitals (DOH Hospitals)",
+                content: `
+                    <p class="mb-4">Apex Hospitals are the highest-level referral hospitals, often under the direct supervision and control of the Department of Health (DOH).</p>
+                    <ul class="list-disc list-inside ml-4 mb-4 space-y-2">
+                        <li><strong>Role:</strong> Serve as end-referral and apex hospitals within their respective regions or for specific specialized services.</li>
+                        <li><strong>Services:</strong> Provide highly specialized and complex medical and surgical care, including tertiary level diagnostic and therapeutic procedures. They also play a role in medical education, training, and research.</li>
+                        <li><strong>Integration:</strong> They complement local health systems and providers, aiming to strengthen and improve service capability and capacity.</li>
+                    </ul>
+                    <p class="font-semibold italic text-blue-600">These facilities are equipped for the most complex cases and advanced medical interventions.</p>
+                `
+            },
+            "specialty-facilities": {
+                title: "Specialty Centers",
+                content: `
+                    <p class="mb-4">Specialty Centers are dedicated facilities focusing on specific medical fields or conditions.</p>
+                    <ul class="list-disc list-inside ml-4 mb-4 space-y-2">
+                        <li><strong>Examples:</strong> Heart Centers, Lung Centers, Kidney Centers, Neonatal Specialty Centers, usually housed within DOH Hospitals or as standalone specialized institutions.</li>
+                        <li><strong>Services:</strong> Offer highly focused expert care, advanced diagnostics, and specialized treatments for specific diseases or organ systems.</li>
+                        <li><strong>Function:</strong> They serve as major referral hubs for complex and rare cases related to their specialization from across the HCPN.</li>
+                    </ul>
+                    <p class="font-semibold italic text-blue-600">These centers provide expert care for particular complex health conditions.</p>
+                `
+            },
+            "special-facilities": {
+                title: "Special Facilities (Public Health Labs, Blood Facilities)",
+                content: `
+                    <p class="mb-4">Beyond hospitals and clinics, HCPNs also include essential supporting special facilities vital for public health and service delivery.</p>
+                    <ul class="list-disc list-inside ml-4 mb-4 space-y-2">
+                        <li><strong>Public Health Laboratories:</strong> Conduct disease surveillance, diagnostic testing for infectious diseases, environmental health monitoring, and outbreak investigations. Critical for population-based health services.</li>
+                        <li><strong>Blood Facilities:</strong> Ensure the safe and adequate supply of blood and blood products for transfusions, supporting surgical procedures and emergency care across the network.</li>
+                        <li><strong>Role in HCPN:</strong> These facilities provide crucial diagnostic, preventive, and supportive services that underpin the entire healthcare delivery system.</li>
+                    </ul>
+                    <p class="font-semibold italic text-blue-600">These facilities provide critical diagnostic and supportive services for the entire network.</p>
+                `
+            }
+        };
+
+        const hcpnNodes = document.querySelectorAll('.hcpn-node');
+        const detailTitle = document.getElementById('detail-title');
+        const detailContent = document.getElementById('detail-content');
+
+        // Function to load content based on section ID
+        function loadHCPNDetail(sectionId) {
+            const data = hcpnDetails[sectionId];
+            if (data) {
+                detailTitle.textContent = data.title;
+                detailContent.innerHTML = data.content;
+            } else {
+                detailTitle.textContent = "Information Not Available";
+                detailContent.innerHTML = "<p>Details for this section are not yet available. Please select another component.</p>";
+            }
+        }
+
+        // Add event listeners to HCPN diagram nodes
+        hcpnNodes.forEach(node => {
+            node.addEventListener('click', (event) => {
+                // Remove active state from all nodes
+                hcpnNodes.forEach(n => n.classList.remove('active'));
+                // Add active state to the clicked node
+                node.classList.add('active');
+                loadHCPNDetail(node.dataset.section);
+            });
+        });
+
+        // Initialize with a default view (optional, could be the intro text)
+        // If you want to automatically click one, uncomment and modify
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     if (hcpnNodes.length > 0) {
+        //         hcpnNodes[0].click();
+        //     }
+        // });
+    </script>
+</body>
+</html>
